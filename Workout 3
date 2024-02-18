@@ -1,0 +1,266 @@
+
+<script>
+function check()
+{
+    var a=Number(prompt("enter first number"))
+    var b=Number(prompt("enter second number"))
+    if(a==100 || b==100 || (a+b)==100){
+        return true
+     }
+    else
+    return false
+}
+document.write(check());
+</script>
+
+/* <html>
+<script>
+function check()
+{
+    var a=Number(prompt("enter first number"))
+    var b=Number(prompt("enter second number"))
+    return Math.abs((a-100)) < Math.abs(b-100) ? "a is nearer to 100":"b is nearest to 100";
+   
+}
+document.write(check());
+</script>
+</html>
+*/
+
+/* <html>
+<form>
+enter_file_with_extension:<input type="text" id="userInput">
+</form>
+<button onclick="check()">see extension</button>
+<script>
+function check()
+{
+    input= document.getElementById("userInput").value;
+    document.write(input.slice(input.lastIndexOf('.')))
+}
+</script>
+</html>
+*/
+
+
+
+/* <html>
+<script>
+function check() {
+    var a = prompt("Enter a string");
+    var result = '';
+    for (var i = 0; i < a.length; i++) {
+        switch (a[i]) {
+            case '':
+                break;
+            case 'z':
+                result += 'a';
+                break;
+            case 'Z':
+                result += 'A';
+                break;
+            default:
+                result += String.fromCharCode(a[i].charCodeAt(0) + 1);
+                break;
+        }
+    }
+    document.write(result);
+}
+
+check();
+</script>
+</html>
+
+*/
+
+/*
+<html>
+<script>
+function check() {
+    var date=new Date()
+    var sep='-'
+    document.write(date.getMonth()+1+sep+date.getDate()+sep+date.getFullYear());
+}
+check();
+</script>
+</html>
+*/
+
+/*
+<script>
+    function check(){
+var name=prompt("enter name")
+alert("welcome  "+name+"!")
+var date=new Date()
+var moths=["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+var month=moths[date.getMonth()]
+document.write( month+" "+date.getDate()+","+date.getFullYear())
+document.write("<br>"+document.lastModified)
+}
+check()
+</script>
+
+*/
+/* <script>
+    function check(){
+var name=prompt("enter a string")
+if( name.startsWith("new!"))
+    return name
+else
+    return "new!"+name
+
+}
+document.write(check())
+</script>
+*/
+
+/*
+<script>
+    function check(){
+var name=prompt("enter a string")
+var c=(name.length)-3
+if( name.length >=3)
+    return (name.substring(0,3)+name.substring(c))
+else
+    return name
+
+}
+document.write(check())
+</script>
+
+*/
+/*
+<html>
+<button onclick="check()"> change_color </button>
+
+<script>
+function check(){
+var n="0123456789ABCDEF"
+var hex="#"
+for(i=0;i<6;i++){
+hex += n[parseInt((Math.random())*16)]
+}
+document.body.style.backgroundColor=hex
+}
+</script>
+</html>
+*/
+
+
+/*
+<html>
+<script>
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function checkAndCapitalize(sentence) {
+    var words = sentence.split(" ");
+    var isCapitalized = true;
+
+    for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+        if (word.charAt(0) !== word.charAt(0).toUpperCase()) {
+            isCapitalized = false;
+            break;
+        }
+    }
+
+    if (isCapitalized) {
+        document.write("The statement is already capitalized: " + sentence);
+    } else {
+        var capitalizedSentence = words.map(capitalize).join(" ");
+        document.write("The statement was not capitalized, now it is: " + capitalizedSentence);
+    }
+}
+
+checkAndCapitalize("good day"); 
+</script>
+</html>
+*/
+
+
+
+/* <html>
+<script>
+function check(){
+    var str="webmaster"
+    str=str.split('')
+    for(i=0;i<str.length;i++)
+    {
+        for(j=i+1;j<str.length;j++){
+            if(str[i]>str[j]){
+                temp=str[i]
+                str[i]=str[j]
+                str[j]=temp
+            }
+        }
+    }
+    document.write(str.join(''))
+}
+check()
+</script>
+</html>
+
+*/
+/*
+<html>
+<body>
+    <form>
+        <label for="textArea">Enter several lines of text:</label><br>
+        <textarea id="textArea" rows="4" cols="50"></textarea><br>
+        
+        <label for="searchChar">Enter search character:</label>
+        <input type="text" id="searchChar"><br>
+        
+        <button type="button" onclick="countOccurrences()">Search</button>
+    </form>
+
+    <script>
+        function countOccurrences() {
+            // Get the input text and search character
+            var text = document.getElementById("textArea").value;
+            var searchChar = document.getElementById("searchChar").value;
+
+            // Count occurrences of the search character in the text
+            var occurrences = 0;
+            for (var i = 0; i < text.length; i++) {
+                if (text.charAt(i) === searchChar) {
+                    occurrences++;
+                }
+            }
+
+            // Display the result
+            alert("Number of occurrences of '" + searchChar + "': " + occurrences);
+        }
+    </script>
+</body>
+</html>
+
+
+*/
+<img id="myImage" src="download.jpg" onmouseover="changeImage()" onmouseout="restoreImage()" alt="Original Image">
+/*
+<script>
+function changeImage() {
+    document.getElementById("myImage").src = "images.png";
+}
+
+function restoreImage() {
+    document.getElementById("myImage").src = "download.jpg";
+}
+</script>
+*/
+/*
+<p id="my"  onmouseover="change()" onmouseout="restore()"> js is used to make a web dynamically use of web for the user </p>
+
+<script>
+function change() {
+    document.getElementById("my").style.color = "yellow";
+}
+
+function restore() {
+    document.getElementById("my").style.color = "black";
+
+}
+</script> */
